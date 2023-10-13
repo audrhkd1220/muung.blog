@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { compareDesc, format } from '@/lib/date';
+import { compareDesc, krDateFormatter } from '@/lib/date';
 import { allPosts, Post } from '@/lib/post';
 
 function PostCard(post: Post) {
@@ -11,9 +11,8 @@ function PostCard(post: Post) {
         </Link>
       </h2>
       <time dateTime={post.date} className="mb-2 block text-xs text-gray-600">
-        {format(post.date)}
+        {krDateFormatter(post.date)}
       </time>
-      <div className="text-sm [&>*]:mb-3 [&>*:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.body.html }} />
     </div>
   )
 };
