@@ -1,7 +1,4 @@
-import { 
-  allPosts as _allPosts, 
-  Post as _Post 
-} from "contentlayer/generated";
+import { allPosts as _allPosts, Post as _Post } from 'contentlayer/generated';
 
 export const allPosts = _allPosts;
 

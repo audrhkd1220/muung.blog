@@ -3,7 +3,7 @@ import { krDateFormatter } from '@/lib/date';
 import { allPosts } from '@/lib/post';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
 
 // SSG(Static Site Generation) 렌더링을 사용하기 위한 getStaticPaths 함수 사용.
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -36,14 +36,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-const PostLayout = ({ 
-  post 
+const PostLayout = ({
+  post,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  if(!post) notFound();
+  if (!post) notFound();
   const MDXComponent = useMDXComponent(post.body.code);
-  
+
   return (
-    <article className="mx-auto max-w-xl py-8">
+    <article className="prose mx-auto max-w-xl py-8">
       <div className="mb-8 text-center">
         <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
           {krDateFormatter(post?.date)}
