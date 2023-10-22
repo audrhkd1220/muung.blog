@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @import 'prism-one-dark.css'; */
 /* @import 'prism-one-light.css'; */
+/* @import 'prism-one-dark.css'; */
 
 :root {
   --foreground-rgb: 0, 0, 0;

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { compareDesc, krDateFormatter } from '@/lib/date';
 import { allPosts, Post } from '@/lib/post';
+import Header from '@/components/Header';
 
 function PostCard(post: Post) {
   return (
@@ -26,10 +27,8 @@ export default function Home() {
   );
 
   return (
-    <div className="mx-auto max-w-xl py-8">
-      <h1 className="mb-8 text-center text-2xl font-black">
-        Next.js + Contentlayer Example
-      </h1>
+    <div className="mx-auto max-w-3xl px-6 lg:max-w-6xl lg:px-5 h-[1770px]">
+      <Header />
       {posts.map((post, idx) => (
         <PostCard key={idx} {...post} />
       ))}
