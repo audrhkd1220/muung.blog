@@ -28,9 +28,15 @@ export default function Home() {
   );
 
   return (
-    <div className="mx-auto max-w-3xl px-6 lg:max-w-6xl lg:px-5 h-[1770px]">
+    <div className="w-full h-full flex flex-col">
       <Header />
-      <main className="pt-[70px]">
+      <main className="w-full pt-[70px] mx-auto max-w-3xl px-6 lg:max-w-6xl lg:px-5">
+        <section className="pt-6">
+          <h3>Muung blog에 오신 것을 환영합니다.🥳</h3>
+          <div>
+            이곳은 개발하면서 경험한 것을 기억하기 위해 기록하는 공간입니다.
+          </div>
+        </section>
         <section className="pt-6">
           {posts.map((post, idx) => (
             <PostCard key={idx} {...post} />

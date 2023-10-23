@@ -16,7 +16,7 @@ const year = new Date().getFullYear();
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col justify-center items-center border-t border-gray-100 p-10">
+    <footer className="w-full flex flex-col justify-center items-center border-t border-gray-100 p-10">
       <div className="flex">
         <Link
           href="https://github.com/audrhkd1220"
