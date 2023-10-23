@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { compareDesc, krDateFormatter } from '@/lib/date';
 import { allPosts, Post } from '@/lib/post';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 function PostCard(post: Post) {
   return (
@@ -29,9 +30,14 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-3xl px-6 lg:max-w-6xl lg:px-5 h-[1770px]">
       <Header />
-      {posts.map((post, idx) => (
-        <PostCard key={idx} {...post} />
-      ))}
+      <main className="pt-[70px]">
+        <section className="pt-6">
+          {posts.map((post, idx) => (
+            <PostCard key={idx} {...post} />
+          ))}
+        </section>
+      </main>
+      <Footer />
     </div>
   );
 }
