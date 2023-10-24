@@ -11,6 +11,16 @@ export const Post = defineDocumentType(() => ({
   fields: {
     title: { type: 'string', required: true },
     date: { type: 'date', required: true },
+    description: { type: 'string', required: true },
+    thumbnailUrl: { type: 'string', required: true },
+    tags: {
+      type: 'list',
+      required: true,
+      of: {
+        type: 'string',
+      },
+      default: [],
+    },
   },
   computedFields: {
     url: {
@@ -24,7 +34,7 @@ export default makeSource({
   contentDirPath: 'posts',
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    // remarkPlugins: [remarkGfm],
     rehypePlugins: [
       rehypeSlug,
       [

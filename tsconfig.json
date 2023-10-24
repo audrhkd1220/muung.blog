@@ -16,6 +16,7 @@
     "incremental": true,
     "paths": {
       "contentlayer/generated": ["./.contentlayer/generated"],
+      "@/contentlayer/generated/*": ["./.contentlayer/generated/*"],
       "@/*": ["./src/*"]
     }
   },
