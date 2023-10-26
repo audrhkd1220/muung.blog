@@ -1,4 +1,6 @@
 // app/posts/[slug]/page.tsx
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 import { krDateFormatter } from '@/lib/date';
 import { allPosts } from '@/lib/post';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
@@ -43,15 +45,20 @@ const PostLayout = ({
   const MDXComponent = useMDXComponent(post.body.code);
 
   return (
-    <article className="prose mx-auto max-w-xl py-8">
-      <div className="mb-8 text-center">
-        <time dateTime={post.date} className="mb-1 text-xs text-gray-600">
-          {krDateFormatter(post?.date)}
-        </time>
-        <h1 className="text-3xl font-bold">{post.title}</h1>
-      </div>
-      <MDXComponent />
-    </article>
+    <div>
+      <Header />
+      <article className="prose max-w-3xl pt-[70px] mx-auto lg:max-w-6xl lg:px-5">
+        <div className="mb-4 pt-6">
+          <h1 className="text-3xl mb-2 font-bold">{post.title}</h1>
+          <time dateTime={post.date} className="mb-1 text-gray-600">
+            {krDateFormatter(post?.date)}
+          </time>
+        </div>
+        <hr className='w-full transition-all border-solid border-1 border-neutral-300 my-8' />
+        <MDXComponent />
+      </article>
+      <Footer />
+    </div>
   );
 };
 
