@@ -5,6 +5,7 @@ import { krDateFormatter } from '@/lib/date';
 import { allPosts } from '@/lib/post';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 // SSG(Static Site Generation) 렌더링을 사용하기 위한 getStaticPaths 함수 사용.
@@ -47,14 +48,26 @@ const PostLayout = ({
   return (
     <div>
       <Header />
-      <article className="prose max-w-3xl pt-[70px] mx-auto lg:max-w-6xl lg:px-5">
+      <article className="prose max-w-3xl py-[70px] mx-auto lg:max-w-6xl lg:px-5">
         <div className="mb-4 pt-6">
           <h1 className="text-3xl mb-2 font-bold">{post.title}</h1>
           <time dateTime={post.date} className="mb-1 text-gray-600">
             {krDateFormatter(post?.date)}
           </time>
         </div>
-        <hr className='w-full transition-all border-solid border-1 border-neutral-300 my-8' />
+        <hr className="w-full transition-all border-solid border-1 border-neutral-300 my-8" />
+        {post.thumbnailUrl ? (
+          <div className="w-full h-auto flex items-center justify-center my-10">
+            <Image
+              src={post?.thumbnailUrl}
+              width={500}
+              height={500}
+              alt="Thumbnail Image"
+            />
+          </div>
+        ) : (
+          <></>
+        )}
         <MDXComponent />
       </article>
       <Footer />

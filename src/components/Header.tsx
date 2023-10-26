@@ -9,7 +9,7 @@ const headerMenuItems = [
 
 const Header = () => {
   return (
-    <header className="w-full flex items-center justify-between fixed inset-0 backdrop-blur-sm h-[70px] border-b border-gray-100 z-10">
+    <header className="w-full flex items-center justify-between fixed inset-0 backdrop-blur-sm bg-white/80 h-[70px] border-b border-gray-100 z-10">
       <div className="flex justify-between w-full max-w-6xl mx-auto flex items-center px-5">
         <div className="flex items-center mb-2">
           <div>

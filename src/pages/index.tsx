@@ -21,8 +21,27 @@ export default function Home() {
           </p>
           <div className="flex gap-3">
             <p>정우석에 대해 더 알고싶다면</p>
-            <Link href="/about" className="hover:underline">
-              about me
+            <Link href="/about" target="_blank" className="hover:underline">
+              <div className="flex items-center gap-1 text-gray-500 hover:text-gray-900">
+                <span>about me</span>
+                <span>
+                  <svg
+                    className="w-4 h-4 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 10"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M1 5h12m0 0L9 1m4 4L9 9"
+                    />
+                  </svg>
+                </span>
+              </div>
             </Link>
           </div>
         </section>
