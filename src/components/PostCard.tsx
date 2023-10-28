@@ -1,4 +1,4 @@
-import { allPosts, Post } from '@/lib/post';
+import { Post } from 'contentlayer/generated';
 import Link from 'next/link';
 import { krDateFormatter } from '@/lib/date';
 
@@ -12,7 +12,7 @@ const PostCard = (post: Post) => {
         <h3 className="text-l mb-2">{post.description}</h3>
       </Link>
       <div className="flex">
-        <div className="flex grow gap-4">
+        <div className="flex grow gap-2">
           {post.tags.map((tag) => (
             <Link
               href={post.url}

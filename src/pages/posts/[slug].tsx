@@ -2,7 +2,7 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import { krDateFormatter } from '@/lib/date';
-import { allPosts } from '@/lib/post';
+import { allPosts } from 'contentlayer/generated';
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import Image from 'next/image';

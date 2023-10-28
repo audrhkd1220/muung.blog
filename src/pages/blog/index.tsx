@@ -1,14 +1,10 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import PostCard from '@/components/PostCard';
-import { allPosts } from '@/lib/post';
-import { compareDesc } from '@/lib/date';
-import Link from 'next/link';
+import { getAllPosts } from '@/datasets/post';
 
 const Blog = () => {
-  const posts = allPosts.sort((a, b) =>
-    compareDesc(new Date(a.date), new Date(b.date)),
-  );
+  const posts = getAllPosts();
 
   return (
     <div className="w-full h-full flex flex-col">
