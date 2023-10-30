@@ -4,6 +4,7 @@ import Footer from '@/components/Footer';
 import PostCard from '@/components/PostCard';
 import Link from 'next/link';
 import { roboto } from '@/lib/font';
+import RightArror from '@/components/icons/RightArrow';
 
 export default function Home() {
   const posts = getHomePosts();
@@ -24,21 +25,7 @@ export default function Home() {
               <div className="flex items-center gap-1 text-gray-500 hover:text-gray-900">
                 <span className="font-semibold">about me</span>
                 <span>
-                  <svg
-                    className="w-4 h-4 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 10"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M1 5h12m0 0L9 1m4 4L9 9"
-                    />
-                  </svg>
+                  <RightArror />
                 </span>
               </div>
             </Link>
@@ -53,13 +40,18 @@ export default function Home() {
               <PostCard key={idx} {...post} />
             ))}
           </div>
-          <div className="mb-6">
-            <Link
-              href="/blog"
-              className="hover:underline text-gray-500 hover:text-gray-900 font-medium"
-            >
-              show more
-            </Link>
+          <div className="flex justify-end mb-6">
+            <div className="flex">
+              <Link
+                href="/blog"
+                className="flex items-center gap-1 text-gray-500 hover:text-gray-900 hover:underline"
+              >
+                <span className="font-semibold">show more</span>
+                <span>
+                  <RightArror />
+                </span>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
