@@ -3,15 +3,16 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import PostCard from '@/components/PostCard';
 import Link from 'next/link';
+import { roboto } from '@/lib/font';
 
 export default function Home() {
   const posts = getHomePosts();
 
   return (
-    <div className="w-full h-full flex flex-col">
+    <div className={`${roboto.className} w-full h-full flex flex-col`}>
       <Header />
       <main className="w-full pt-[70px] mx-auto max-w-3xl px-6 lg:max-w-6xl lg:px-5">
-        <section className="mt-6 p-6 flex bg-teal-50 rounded-2xl">
+        <section className="mt-6 p-6 flex bg-[#EDEDED] rounded-2xl">
           <div className="w-[310px] h-[350px] bg-[url('/home/profile.gif')] mr-6 bg-no-repeat bg-[0_-100px] rounded-2xl"></div>
           <div className="grow">
             <h2 className="text-3xl font-bold mb-2">WooSeok Jeong</h2>
@@ -47,10 +48,18 @@ export default function Home() {
           <div className="my-6">
             <h2 className="text-3xl font-bold">Recent Posts</h2>
           </div>
-          <div>
+          <div className="flex flex-col gap-6 mb-6">
             {posts.map((post, idx) => (
               <PostCard key={idx} {...post} />
             ))}
+          </div>
+          <div className="mb-6">
+            <Link
+              href="/blog"
+              className="hover:underline text-gray-500 hover:text-gray-900 font-medium"
+            >
+              show more
+            </Link>
           </div>
         </section>
       </main>

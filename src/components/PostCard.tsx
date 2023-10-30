@@ -4,7 +4,7 @@ import { krDateFormatter } from '@/lib/date';
 
 const PostCard = (post: Post) => {
   return (
-    <div className="mb-8">
+    <div>
       <Link href={post.url} className="group">
         <h2 className="group-hover:underline mb-1 text-xl font-semibold">
           {post.title}
