@@ -4,7 +4,23 @@ import Footer from '@/components/Footer';
 import PostCard from '@/components/PostCard';
 import Link from 'next/link';
 import { roboto } from '@/lib/font';
-import RightArror from '@/components/icons/RightArrow';
+import RightArrorIcon from '@/components/icons/RightArrowIcon';
+
+const ArrowLink = ({ href, text }: { href: string; text: string }) => {
+  return (
+    <div className="flex">
+      <Link
+        href={href}
+        className="flex items-center gap-1 text-gray-500 hover:text-gray-900 hover:underline"
+      >
+        <span className="font-medium">{text}</span>
+        <span>
+          <RightArrorIcon />
+        </span>
+      </Link>
+    </div>
+  );
+};
 
 export default function Home() {
   const posts = getHomePosts();
@@ -21,14 +37,7 @@ export default function Home() {
             <p className="mb-2">
               이곳은 개발하면서 경험한 것을 기억하기 위해 기록하는 공간입니다.
             </p>
-            <Link href="/about" target="_blank" className="hover:underline">
-              <div className="flex items-center gap-1 text-gray-500 hover:text-gray-900">
-                <span className="font-semibold">about me</span>
-                <span>
-                  <RightArror />
-                </span>
-              </div>
-            </Link>
+            <ArrowLink href="/about" text="about me" />
           </div>
         </section>
         <section className="pt-6">
@@ -42,15 +51,7 @@ export default function Home() {
           </div>
           <div className="flex justify-end mb-6">
             <div className="flex">
-              <Link
-                href="/blog"
-                className="flex items-center gap-1 text-gray-500 hover:text-gray-900 hover:underline"
-              >
-                <span className="font-semibold">show more</span>
-                <span>
-                  <RightArror />
-                </span>
-              </Link>
+              <ArrowLink href="/blog" text="show more" />
             </div>
           </div>
         </section>

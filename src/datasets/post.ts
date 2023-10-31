@@ -9,6 +9,6 @@ export const getAllPosts = () => {
 
 export const getHomePosts = () => {
   return allPosts
-    .slice(0, 5)
-    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)));
+    .sort((a, b) => compareDesc(new Date(a.date), new Date(b.date)))
+    .slice(0, 5);
 };

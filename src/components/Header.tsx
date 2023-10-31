@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Search from './Search';
-import Light from '@/components/icons/Light';
+import LightIcon from '@/components/icons/LightIcon';
 
 const headerMenuItems = [
   { href: 'blog', title: 'Blog' },
@@ -15,7 +15,7 @@ const Header = () => {
         <div className="flex items-center mb-2">
           <div>
             <Link href="/">
-              <h1 className="text-2xl">muung.blog</h1>
+              <h1 className="text-2xl font-bold">muung.blog</h1>
             </Link>
           </div>
         </div>
@@ -29,7 +29,7 @@ const Header = () => {
             ))}
           </div>
           <button className="p-1">
-            <Light />
+            <LightIcon />
           </button>
         </nav>
       </div>

@@ -1,4 +1,4 @@
-const RightArror = () => {
+const RightArrorIcon = () => {
   return (
     <span>
       <svg
@@ -20,4 +20,4 @@ const RightArror = () => {
   );
 };
 
-export default RightArror;
+export default RightArrorIcon;

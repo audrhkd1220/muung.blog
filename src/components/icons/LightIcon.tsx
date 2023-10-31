@@ -1,4 +1,4 @@
-const Light = () => {
+const LightIcon = () => {
   return (
     <span>
       <svg
@@ -19,4 +19,4 @@ const Light = () => {
   );
 };
 
-export default Light;
+export default LightIcon;
