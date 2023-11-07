@@ -23,7 +23,11 @@ const Header = () => {
           <Search />
           <div className="flex">
             {headerMenuItems.map((menu) => (
-              <Link key={menu.title} href={menu.href} className="px-3 py-2">
+              <Link
+                key={menu.title}
+                href={`/${menu.href}`}
+                className="px-3 py-2"
+              >
                 {menu.title}
               </Link>
             ))}

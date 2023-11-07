@@ -28,8 +28,8 @@ export default function Home() {
   return (
     <div className={`${roboto.className} w-full h-full flex flex-col`}>
       <Header />
-      <main className="w-full pt-[70px] mx-auto max-w-3xl px-6 lg:max-w-6xl lg:px-5">
-        <section className="mt-6 p-6 flex bg-[#EDEDED] rounded-2xl">
+      <main className="w-full pt-[70px] mx-auto max-w-3xl px-6 pb-6 lg:max-w-6xl lg:px-5">
+        <section className="mt-6 p-6 flex bg-sky-100 rounded-2xl">
           <div className="w-[310px] h-[350px] bg-[url('/home/profile.gif')] mr-6 bg-no-repeat bg-[0_-100px] rounded-2xl"></div>
           <div className="grow">
             <h2 className="text-3xl font-bold mb-2">WooSeok Jeong</h2>
@@ -49,7 +49,7 @@ export default function Home() {
               <PostCard key={idx} {...post} />
             ))}
           </div>
-          <div className="flex justify-end mb-6">
+          <div className="flex justify-end">
             <div className="flex">
               <ArrowLink href="/blog" text="show more" />
             </div>

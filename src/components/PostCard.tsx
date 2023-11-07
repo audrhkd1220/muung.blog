@@ -16,7 +16,7 @@ const PostCard = (post: Post) => {
           {post.tags.map((tag) => (
             <Link
               href={post.url}
-              className="px-2 py-0.5 bg-[#d4f0f0] rounded-lg text-gray-900 text-sm hover:bg-[#8FCACA]"
+              className="px-2 py-0.5 bg-sky-100 rounded-lg text-gray-900 text-sm hover:bg-sky-200"
               key={tag}
             >
               {tag}
